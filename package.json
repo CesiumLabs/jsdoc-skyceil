@@ -1,0 +1,23 @@
+{
+  "name": "jsdoc-skyceil",
+  "version": "1.0.0",
+  "description": "A clean and minimalistic JSDoc theme",
+  "main": "publish.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyrouge/jsdoc-skyceil.git"
+  },
+  "keywords": [
+    "jsdoc",
+    "theme"
+  ],
+  "author": "ZYROUGE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zyrouge/jsdoc-skyceil/issues"
+  },
+  "homepage": "https://github.com/zyrouge/jsdoc-skyceil#readme"
+}

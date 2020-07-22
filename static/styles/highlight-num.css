@@ -1,0 +1,20 @@
+pre {
+    padding: 0;
+}
+
+code {
+    padding: 1.75rem 2rem !important;
+}
+
+.hljs-ln-n {
+    opacity: 0.3;
+}
+
+.hljs-ln-n:after {
+    content: "";
+    padding-right: 1.25rem;
+}
+
+pre td, pre th {
+    border: transparent !important;
+}
