@@ -1,5 +1,6 @@
 # Changelogs
 All the Versions and the issues will be listed here
+[Edit on GitHub](https://github.com/zyrouge/jsdoc-skyceil/blob/master/changelogs.md)
 
 ---
 
