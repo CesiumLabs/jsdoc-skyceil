@@ -307,6 +307,8 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
         items.forEach(item => {
             var methods = find({ kind: "function", memberof: item.longname })
+            var members = find({ kind: "member", memberof: item.longname })
+
             let displayName;
 
             if ( !hasOwnProp.call(item, 'longname') ) {
@@ -322,7 +324,8 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                     `<li>`,
                     `${getIcon(itemHeading)}<b>${linktoFn(item.longname, displayName.replace(/\b(module|event):/g, ''))}</b>`,
                     `<ul class="has-class-methods">`,
-                    methods.map(meth => `<li>${getIcon("f")}${linktoFn(meth.longname, meth.name)}</li>`).join(""),
+                    methods.map(meth => `<li>${getIcon(meth.kind)}${linktoFn(meth.longname, meth.name)}</li>`).join(""),
+                    members.map(meth => `<li>${getIcon(meth.kind)}${linktoFn(meth.longname, meth.name)}</li>`).join(""),
                     `</ul>`,
                     `</li>`
                 ].join("");
