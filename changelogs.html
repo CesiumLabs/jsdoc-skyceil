@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyceil</title>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="hero">
+            <a href="/"><img src="images/logo.png" alt="Logo" width="400" height="100"></a>
+            <p class="subtitle text-light"><i class="fas fa-paint-brush"></i> <i><b>Clean</b> & <b>Minimalistic</b> theme for <b>JSDoc</b></i></p>
+        </div>
+
+        <div class="box" id="status" style="display: none;"></div>
+    </main>
+
+    <footer>
+        Made by <strong><a href="https://zyrouge.gq">ZYROUGE</a></strong> with <i class="fas fa-heart" style="color: rgb(255, 82, 111);"></i>
+    </footer>
+</body>
+
+<script>
+    const changesURL = "https://raw.githack.com/zyrouge/jsdoc-skyceil/master/changelogs.md";
+    const mainDiv = $("main");
+    const statusDiv = $("#status");
+
+    fetch(changesURL)
+    .then(res => res.text())
+    .then(res => {
+        const parts = res.split("---").map(part => part.trim());
+        parts.forEach(part => {
+            let rendered = marked(part);
+            mainDiv.append(`<div class="box">${rendered}</div>`);
+        });
+    })
+    .catch(e => {
+        statusDiv.show().html("<h2>Couldn\'t load Changelogs 🙁</h2>");
+    });
+</script>
+
+<style>
+    .box li {
+        margin-left: 1rem;
+    }
+</style>
+</html>
