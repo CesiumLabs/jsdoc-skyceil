@@ -1,6 +1,8 @@
 # Changelogs
 All the Versions and the issues will be listed here
 
+---
+
 ## v1.0.4
 * Fixed an issue where all the heading were dislocated
 * Added line numbers in readme code blocks
