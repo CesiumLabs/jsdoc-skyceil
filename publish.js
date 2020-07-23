@@ -409,6 +409,12 @@ function buildNav(members) {
     return nav;
 }
 
+function prettifyReadme (readme) {
+    let prettifiedReadme = readme;
+    prettifiedReadme = prettifiedReadme.replace(/class="prettyprint/g, "class=\"prettyprint linenums");
+    return prettifiedReadme;
+}
+
 /**
     @param {TAFFY} taffyData See <http://taffydb.com/>.
     @param {object} opts
@@ -636,7 +642,7 @@ exports.publish = (taffyData, opts, tutorials) => {
         packages.concat(
             [{
                 kind: 'mainpage',
-                readme: opts.readme,
+                readme: opts.readme ? prettifyReadme(opts.readme) : undefined,
                 longname: (opts.mainpagetitle) ? opts.mainpagetitle : 'Main Page'
             }]
         ).concat(files), indexUrl);

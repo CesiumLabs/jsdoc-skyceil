@@ -18,3 +18,10 @@ $ jsdoc ./ -t /path/to/skyceil
 ```bash
 $ git clone https://github.com/zyrouge/jsdoc-skyceil
 ```
+
+## Helpful Links
+
+* [Website/Docs](https://skyceil.zyrouge.gq/)
+* [Source](https://github.com/zyrouge/jsdoc-skyceil)
+* [Changelogs](https://github.com/zyrouge/jsdoc-skyceil/blob/master/changelogs.md)
+* [Discord](https://zyrouge.gq/discord)
