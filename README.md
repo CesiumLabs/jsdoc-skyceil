@@ -2,6 +2,8 @@
 
 A clean and minimalistic JSDoc theme
 
+![Preview](https://skyceil.zyrouge.gq/images/main.png)
+
 # [Documentation](https://skyceil.zyrouge.gq)
 
 ## Install
