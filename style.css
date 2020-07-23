@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato';
+    background: rgb(230, 230, 230);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.hero {
+    background: linear-gradient(-45deg, rgba(1, 196, 255, 0.2), rgba(255, 20, 20, 0.2)) white;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    box-shadow: 0px 0.25rem 1rem rgb(128, 128, 128, 0.5);
+}
+
+.box {
+    margin-top: 2.25rem;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    width: 90%;
+    box-shadow: 0px 0.25rem 1rem rgb(128, 128, 128, 0.5);
+}
+
+.subtitle {
+    color: rgb(100, 100, 100);
+}
+
+.has-center-text {
+    text-align: center;
+}
+
+.text-light {
+    font-weight: lighter;
+}
+
+a {
+    color: rgb(0, 102, 255);
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+a:hover {
+    color: rgb(70, 144, 255);
+}
+
+.code {
+    font-family: 'Inconsolata';
+    background-color: rgb(230, 230, 230);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+hr {
+    background-color: rgb(240, 240, 240);
+    margin: 1.5rem 0;
+}
+
+.box img {
+    width: 100%;
+}
+
+.box img.vertical {
+    width: 35% !important;
+}
+
+.button {
+    display: inline-block;
+    margin: 1rem 0.5rem 1rem 0;
+    box-shadow: 0px 0rem 0.75rem rgb(128, 128, 128, 0.5);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background: white;
+}
+
+.button:hover {
+    box-shadow: 0px 0rem 0.75rem rgb(128, 128, 128, 0.7);
+}
+
+.flexbox {
+    display: flexbox;
+}
+
+.flexbox .button {
+    margin: 1.5rem 0.5rem 1.5rem 0;
+    margin-bottom: 0;
+}
+
+.is-red-btn {
+    background-color: red;
+    color: white !important;
+}
+
+.is-red-btn:hover {
+    background-color: rgb(255, 28, 28);
+}
+
+.is-dark-btn {
+    background-color: rgb(36, 36, 36);
+    color: white !important;
+}
+
+.is-dark-btn:hover {
+    background-color: rgb(49, 49, 49);
+}
+
+.is-blue-btn {
+    background-color: rgb(0, 110, 255);
+    color: white !important;
+}
+
+.is-blue-btn:hover {
+    background-color: rgb(23, 124, 255);
+}
+
+footer {
+    background: linear-gradient(-45deg, rgba(1, 196, 255, 0.2), rgba(255, 20, 20, 0.2)) white;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 0px 0.25rem 1rem rgb(128, 128, 128, 0.5);
+}
+
+@media screen and (max-width: 750px) {
+    .hero {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .box img.vertical {
+        width: 75% !important;
+    }
+}
