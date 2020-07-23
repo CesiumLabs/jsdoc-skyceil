@@ -213,6 +213,10 @@ h2, h3.subsection-title
     margin-bottom: 12px;
 }
 
+h3.subsection-title {
+    text-decoration: underline;
+}
+
 h3
 {
     font-size: 24px;
@@ -386,7 +390,7 @@ tr > th:last-child { border-right: 1px solid #ddd; }
 }
 
 .prettyprint.example li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .params .name, .props .name, .name code {
@@ -459,6 +463,11 @@ hr {
 .small-icon.M {
     background-color: #f8e3ae;
     color: #fcb603;
+}
+
+.small-icon.E {
+    background-color: #c1ffb8;
+    color: #20fc03;
 }
 
 nav .has-class-methods {
