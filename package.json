@@ -1,6 +1,6 @@
 {
   "name": "jsdoc-skyceil",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A clean and minimalistic JSDoc theme",
   "main": "publish.js",
   "scripts": {
