@@ -131,6 +131,15 @@ hr {
     background-color: rgb(23, 124, 255);
 }
 
+.is-yellow-btn {
+    background-color: rgb(255, 208, 0);
+    color: white !important;
+}
+
+.is-yellow-btn:hover {
+    background-color: rgb(255, 212, 22);
+}
+
 footer {
     background: linear-gradient(-45deg, rgba(1, 196, 255, 0.2), rgba(255, 20, 20, 0.2)) white;
     text-align: center;
