@@ -29,6 +29,9 @@
 
     --disabled: #454545;
     --important-red: #950B02;
+    
+    --alpha-dark: #2f3136;
+    --dark-lite: #24292e;
 }
 
 body[data-theme="dark"] {
@@ -504,6 +507,23 @@ hr {
     border-radius: 4px;
     font-weight: bold;
     vertical-align: middle;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--alpha-dark); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-lite); 
 }
 
 body[data-theme="dark"] .small-icon {
