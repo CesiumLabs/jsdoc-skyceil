@@ -62,8 +62,54 @@ body[data-theme="dark"] {
     border-radius: 10px;
     outline: none;
     background: transparent !important;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
+}
+
+.utilities {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-box {
+    outline: none;
+    border: 2px solid var(--simple-code);
+    padding: 5px;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background);
+    color: var(--font);
+}
+
+#search-results {
+    position: absolute;
+    border: 2px solid var(--simple-code);
+    background-color: var(--background);
+    width: 75%;
+    margin-top: 6px;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+#search-results p {
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2rem;
+    color: var(--font);
+    text-decoration: none;
+    margin: 0;
+}
+
+#search-results p a {
+    font-size: 14px;
+    display: block;
+}
+
+#search-results p:hover {
+    background-color: var(--simple-code);
 }
 
 html

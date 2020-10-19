@@ -7,6 +7,7 @@
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <script src="scripts/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,9 +20,11 @@
 
 <nav class="navbar">
     <div class="utilities">
-        <center>
-            <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
-        </center>
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search for stuffs..."><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
     </div>
     <hr>
     <?js= this.nav ?>

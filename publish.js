@@ -409,6 +409,107 @@ function buildNav(members) {
     return nav;
 }
 
+function buildMemberSearch(items, itemHeading, itemsSeen, linktoFn) {
+    let search = [];
+
+    if (items.length) {
+        let itemsSearch = [];
+
+        items.forEach(item => {
+            var methods = find({ kind: "function", memberof: item.longname })
+            var members = find({ kind: "member", memberof: item.longname })
+            var hasMethods = !!(methods.length || members.length);
+            let displayName;
+
+            if ( !hasOwnProp.call(item, 'longname') ) {
+                itemsSearch.push({ name: item.name, url: linktoFn('', item.name) });
+            }
+            else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
+                if (env.conf.templates.default.useLongnameInNav) {
+                    displayName = item.longname;
+                } else {
+                    displayName = item.name;
+                }
+
+                itemsSearch.push({
+                    name: displayName,
+                    url: linktoFn(item.longname, displayName.replace(/\b(module|event):/g, ''))
+                });
+
+                if(hasMethods) {
+                    methods.forEach(meth => {
+                        itemsSearch.push({
+                            name: meth.longname,
+                            url: linktoFn(meth.longname, meth.name)
+                        });
+                    });
+                    members.forEach(meth => {
+                        itemsSearch.push({
+                            name: meth.longname,
+                            url: linktoFn(meth.longname, meth.name)
+                        });
+                    });
+                }
+            }
+        });
+
+        if (itemsSearch.length) {
+            search.push(...itemsSearch);
+        }
+    }
+
+    return search;
+}
+
+/**
+ * Create the search bar in sidebar.
+ * @param {object} members The members that will be used to create the sidebar.
+ * @param {array<object>} members.classes
+ * @param {array<object>} members.externals
+ * @param {array<object>} members.globals
+ * @param {array<object>} members.mixins
+ * @param {array<object>} members.modules
+ * @param {array<object>} members.namespaces
+ * @param {array<object>} members.tutorials
+ * @param {array<object>} members.events
+ * @param {array<object>} members.interfaces
+ * @return {string} The HTML for the navigation sidebar.
+ */
+function buildSearch(members) {
+    let globalNav;
+    let search = [{ name: "Home", url: '<a href="index.html">Home</a>' }];
+    const seen = {};
+    const seenTutorials = {};
+
+    search.push(...buildMemberSearch(members.modules, 'Modules', {}, linkto));
+    search.push(...buildMemberSearch(members.externals, 'Externals', seen, linktoExternal));
+    search.push(...buildMemberSearch(members.namespaces, 'Namespaces', seen, linkto));
+    search.push(...buildMemberSearch(members.classes, 'Classes', seen, linkto));
+    search.push(...buildMemberSearch(members.interfaces, 'Interfaces', seen, linkto));
+    search.push(...buildMemberSearch(members.events, 'Events', seen, linkto));
+    search.push(...buildMemberSearch(members.mixins, 'Mixins', seen, linkto));
+    search.push(...buildMemberSearch(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial));
+
+    if (members.globals.length) {
+        globalNav = [];
+
+        members.globals.forEach(({kind, longname, name}) => {
+            if ( kind !== 'typedef' && !hasOwnProp.call(seen, longname) ) {
+                globalNav.push({ name: name, url: linkto(longname, name) });
+            }
+        });
+
+        if (!globalNav.length) {
+            search.push({ name: "Global", url: linkto('global', 'Global') });
+        }
+        else {
+            search.push(...globalNav);
+        }
+    }
+
+    return search;
+}
+
 function prettifyReadme (readme) {
     let prettifiedReadme = readme;
     prettifiedReadme = prettifiedReadme.replace(/class="prettyprint/g, "class=\"prettyprint linenums");
@@ -625,7 +726,9 @@ exports.publish = (taffyData, opts, tutorials) => {
 
     // once for all
     view.nav = buildNav(members);
-    attachModuleSymbols( find({ longname: {left: 'module:'} }), members.modules );
+    attachModuleSymbols( find({ longname: { left: 'module:'} }), members.modules );
+    view.search = buildSearch(members);
+    fs.writeFileSync(path.join(outdir, "search.json"), JSON.stringify(view.search));
 
     // generate the pretty-printed source files first so other pages can link to them
     if (outputSourceFiles) {
