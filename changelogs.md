@@ -5,6 +5,12 @@ All the Versions and the issues will be listed here
 
 ---
 
+## v1.0.6
+* Added Search Bar
+* New Icon for Theme Button
+
+---
+
 ## v1.0.5
 * Added Dark Theme with switcher
 * New Code Highliter
