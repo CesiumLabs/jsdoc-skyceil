@@ -15,6 +15,7 @@
 :root {
     --font: #4d4e53;
     --second-font: #aaa;
+    --theme-font: #aaa;
 
     --background: #fff;
 
@@ -37,6 +38,7 @@
 body[data-theme="dark"] {
     --font: #ccc;
     --second-font: #e1e1ff;
+    --theme-font: #4b4b4b;
 
     --background: #161616;
 
@@ -55,16 +57,13 @@ body[data-theme="dark"] {
 
 .theme {
     padding: 10px 15px;
-    background: #161616;
-    color: #fff;
+    color: var(--font);
     border: none;
     border-radius: 10px;
     outline: none;
-}
-
-body[data-theme="dark"] .theme {
-    background: #fff;
-    color: #161616;
+    background: transparent !important;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 html
@@ -204,8 +203,6 @@ nav li {
     top: 10px;
     right: 10px;
     z-index: 1;
-    background: rgb(245, 245, 245, 0.5);
-    border-radius: 5px;
     padding: 3px;
     transition: 0.5s;
 }
@@ -214,13 +211,9 @@ nav li {
     margin: 4px;
     padding: 3px;
     background: var(--font);
-    border-radius: 5px;
+    border-radius: 1px;
     opacity: 1;
     transition: 0.5s;
-}
-
-.burger.is-active {
-    border-radius: 20px;
 }
 
 .burger.is-active .burger-line-1 {
@@ -350,7 +343,7 @@ tr > th:last-child { border-right: 1px solid var(--border); }
 }
 
 .type-signature {
-    color: var(--second-font);
+    color: var(--theme-font);
 }
 
 .name {
@@ -412,7 +405,7 @@ tr > th:last-child { border-right: 1px solid var(--border); }
 
 .prettyprint.linenums
 {
-  padding: 10px 10px 0 70px;
+  padding: 10px 10px 10px 70px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -509,21 +502,21 @@ hr {
     vertical-align: middle;
 }
 
-/* scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f2f2f2; 
+    background: var(--font);
 }
  
 ::-webkit-scrollbar-thumb {
-  background: var(--alpha-dark); 
+    background: var(--alpha-dark); 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--dark-lite); 
+    background: var(--dark-lite); 
 }
 
 body[data-theme="dark"] .small-icon {
@@ -609,6 +602,6 @@ nav .has-class-methods {
     }
 
     footer {
-        padding: 0;
+        padding: 10px;
     }
 }

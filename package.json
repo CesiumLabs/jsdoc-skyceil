@@ -4,7 +4,7 @@
   "description": "A clean and minimalistic JSDoc theme",
   "main": "publish.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jsdoc -R ../jsdoc-skyceil-docs/example/readme.md -d ../jsdoc-skyceil-docs/example -t . --verbose ../jsdoc-skyceil-docs/example/thecode.js"
   },
   "repository": {
     "type": "git",

@@ -20,6 +20,24 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
 <?js } ?>
 
+<?js if(
+    data.version ||
+    data.since ||
+    (data.inherited && data.inherits && !data.overrides) ||
+    data.overrides ||
+    (data.implementations && data.implementations.length) ||
+    (data.implements && data.implements.length) ||
+    (data.mixes && data.mixes.length) ||
+    data.deprecated ||
+    (data.author && author.length) ||
+    data.copyright ||
+    data.license ||
+    data.defaultvalue ||
+    (data.meta && self.outputSourceFiles) ||
+    (data.tutorials && tutorials.length) ||
+    (data.see && see.length) ||
+    (data.todo && todo.length)
+) {?>
 <dl class="details">
 
     <?js if (data.version) {?>
@@ -141,3 +159,4 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     </dd>
     <?js } ?>
 </dl>
+<?js } ?>

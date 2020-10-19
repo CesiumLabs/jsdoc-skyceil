@@ -41,10 +41,10 @@ const init = async () => {
 
             if (DBTheme === "dark" && bodyTheme !== "dark") {
                 body.setAttribute("data-theme", "dark");
-                themeBtn.innerHTML = "💡 Turn on the lights";
+                themeBtn.innerHTML = "<i class=\"fas fa-sun\"></i>";
             } else if (DBTheme === "light" && bodyTheme !== "light") {
                 body.setAttribute("data-theme", "light");
-                themeBtn.innerHTML = "🌙 Turn off the lights";
+                themeBtn.innerHTML = "<i class=\"fas fa-moon\"></i>";
             }
         }
 
