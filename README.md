@@ -2,9 +2,9 @@
 
 A clean and minimalistic JSDoc theme
 
-![Preview](https://skyceil.zyrouge.gq/images/main.png)
+![Preview](https://jsdoc.snowflakedev.xyz/images/main.png)
 
-# [Documentation](https://skyceil.zyrouge.gq)
+# [Documentation](https://jsdoc.snowflakedev.xyz)
 
 ## Install
 ```bash
@@ -18,12 +18,12 @@ $ jsdoc ./ -t /path/to/skyceil
 
 ## Clone
 ```bash
-$ git clone https://github.com/zyrouge/jsdoc-skyceil
+$ git clone https://github.com/DevSnowflake/jsdoc-skyceil
 ```
 
 ## Helpful Links
 
-* [Website/Docs](https://skyceil.zyrouge.gq/)
-* [Source](https://github.com/zyrouge/jsdoc-skyceil)
-* [Changelogs](https://github.com/zyrouge/jsdoc-skyceil/blob/master/changelogs.md)
-* [Discord](https://zyrouge.gq/discord)
+* [Website/Docs](https://jsdoc.snowflakedev.xyz)
+* [Source](https://github.com/DevSnowflake/jsdoc-skyceil)
+* [Changelogs](https://github.com/DevSnowflake/jsdoc-skyceil/blob/master/changelogs.md)
+* [Discord](https://snowflakedev.xyz/discord)

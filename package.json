@@ -1,23 +1,31 @@
 {
   "name": "jsdoc-skyceil",
-  "version": "1.0.6",
-  "description": "A clean and minimalistic JSDoc theme",
+  "version": "2.0.0",
+  "description": "A clean and minimalistic JSDoc theme for everyone",
   "main": "publish.js",
   "scripts": {
+    "format": "prettier --write **/*.{js,css}",
     "test": "jsdoc -R ../jsdoc-skyceil-docs/example/readme.md -d ../jsdoc-skyceil-docs/example -t . --verbose ../jsdoc-skyceil-docs/example/thecode.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zyrouge/jsdoc-skyceil.git"
+    "url": "git+https://github.com/DevSnowflake/jsdoc-skyceil.git"
   },
   "keywords": [
     "jsdoc",
-    "theme"
+    "theme",
+    "docs",
+    "docgen",
+    "jsdoc-theme"
   ],
   "author": "ZYROUGE",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zyrouge/jsdoc-skyceil/issues"
+    "url": "https://github.com/DevSnowflake/jsdoc-skyceil/issues"
   },
-  "homepage": "https://skyceil.zyrouge.gq"
+  "homepage": "https://jsdoc.snowflakedev.xyz",
+  "devDependencies": {
+    "jsdoc": "^3.6.7",
+    "prettier": "^2.3.0"
+  }
 }
